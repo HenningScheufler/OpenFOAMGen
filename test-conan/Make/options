@@ -1,0 +1,69 @@
+
+CONAN_INCS := \
+       -I/home/henning/.conan/data/nlohmann_json/3.9.1/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include \ 
+   -I/home/henning/.conan/data/boost/1.74.0/_/_/package/ca891ed5c8e67ebb3e46639c100abdbca6d8b11e/include \ 
+   -I/home/henning/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include \ 
+   -I/home/henning/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/include \ 
+   -I/home/henning/.conan/data/libbacktrace/cci.20210118/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include \ 
+
+
+CONAN_LIBS := \
+       -L/home/henning/.conan/data/boost/1.74.0/_/_/package/ca891ed5c8e67ebb3e46639c100abdbca6d8b11e/lib \ 
+   -L/home/henning/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib \ 
+   -L/home/henning/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/lib \ 
+   -L/home/henning/.conan/data/libbacktrace/cci.20210118/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/lib \ 
+   -lboost_contract \ 
+   -lboost_coroutine \ 
+   -lboost_fiber_numa \ 
+   -lboost_fiber \ 
+   -lboost_context \ 
+   -lboost_graph \ 
+   -lboost_iostreams \ 
+   -lboost_log_setup \ 
+   -lboost_log \ 
+   -lboost_locale \ 
+   -lboost_math_c99 \ 
+   -lboost_math_c99f \ 
+   -lboost_math_c99l \ 
+   -lboost_math_tr1 \ 
+   -lboost_math_tr1f \ 
+   -lboost_math_tr1l \ 
+   -lboost_nowide \ 
+   -lboost_program_options \ 
+   -lboost_random \ 
+   -lboost_regex \ 
+   -lboost_stacktrace_addr2line \ 
+   -lboost_stacktrace_backtrace \ 
+   -lboost_stacktrace_basic \ 
+   -lboost_stacktrace_noop \ 
+   -lboost_timer \ 
+   -lboost_type_erasure \ 
+   -lboost_thread \ 
+   -lboost_atomic \ 
+   -lboost_chrono \ 
+   -lboost_container \ 
+   -lboost_date_time \ 
+   -lboost_unit_test_framework \ 
+   -lboost_prg_exec_monitor \ 
+   -lboost_test_exec_monitor \ 
+   -lboost_exception \ 
+   -lboost_wave \ 
+   -lboost_filesystem \ 
+   -lboost_system \ 
+   -lboost_wserialization \ 
+   -lboost_serialization \ 
+   -lz \ 
+   -lbz2 \ 
+   -lbacktrace \ 
+
+
+
+EXE_INC = \
+    -I../../../src/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    $(CONAN_INCS)
+
+EXE_LIBS = \
+    -lfiniteVolume \
+    $(CONAN_LIBS)
