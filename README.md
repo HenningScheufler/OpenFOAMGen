@@ -51,7 +51,7 @@ and
 
 {{{CONAN_INCS_LIBS}}}
 
-with the chached libaries in conan
+with the cached libraries in conan
 
 
 ## Install OpenFOAM generator
