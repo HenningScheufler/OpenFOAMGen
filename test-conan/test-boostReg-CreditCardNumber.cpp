@@ -65,7 +65,9 @@ int main(int argc, char* argv[])
    };
    
    std::cout << "dumping json" <<  j.dump(4) << std::endl;
-   
+
+   std::cout << "boost regexp"<< std::endl;
+
    try{
       std::string input;
       if(argc > 1)

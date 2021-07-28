@@ -2,13 +2,14 @@ from conans import ConanFile
 from conans.model import Generator
 from pathlib import Path
 
-class foamGen(Generator):
+class OpenFOAMGen(Generator):
 
     @property
     def filename(self):
         opt_path = "options"
-        if (not Path(opt_path).exists()):
-            opt_temp_path = "Make/options"
+        if (not Path("files").exists()):
+            opt_path = "Make/options"
+        print(opt_path)
         return opt_path
 
     @property
@@ -37,7 +38,8 @@ class foamGen(Generator):
 
 
 class OpenFOAMGeneratorPackage(ConanFile):
-    name = "foamGen"
+    name = "OpenFOAMGen"
     version = "0.1"
-    url = "https://github.com/..."
-    license = "MIT"
+    url = "https://github.com/HenningScheufler/OpenFOAMGen.git"
+    license = "GPLv3"
+    description = "OpenFOAM Generator"
