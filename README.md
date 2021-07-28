@@ -79,8 +79,8 @@ Note: this will take a while.
 
 
 ```bash
-    wmake
-    test-boostReg-CreditCardNumber 1000-1000-1000-1000 # compiles the library
+    wmake # compiles est-boostReg-CreditCardNumber and links it with conan-libs
+    test-boostReg-CreditCardNumber 1000-1000-1000-1000 
 ```
 
 And you should see:
@@ -103,5 +103,6 @@ dumping json{
     },
     "pi": 3.141
 }
+boost regexp
 Matched OK...
 ```
