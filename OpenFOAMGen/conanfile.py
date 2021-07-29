@@ -17,16 +17,19 @@ class OpenFOAMGen(Generator):
 
     @property
     def content(self):
-        print(self.filename)
         opt_temp = ""
         if self.found_option_template():
             opt_temp += Path(OpenFOAMGen.opt_temp_path).read_text()
+
 
         incl = ""
         if not self.found_option_template():
             incl += "CONAN_INCS := \\ \n"
         for i in self.deps_build_info.include_paths:
-            incl += "   -I{} \\ \n".format(i)
+            incl += "   -I{} \\\n".format(i)
+
+        if (incl):
+            incl = incl[:-3]
 
         lib_incl = ""
         if not self.found_option_template():
@@ -35,13 +38,17 @@ class OpenFOAMGen(Generator):
             lib_incl += "   -L{} \\ \n".format(lp)
 
         for l in self.deps_build_info.libs:
-            lib_incl += "   -l{} \\ \n".format(l)
+            lib_incl += "   -l{} \\\n".format(l)
+
+        if (lib_incl):
+            lib_incl = lib_incl[:-3]
+
 
         if self.found_option_template():
             opt_temp = opt_temp.replace("{{{CONAN_INCS_INCS}}}",incl)
             opt_temp = opt_temp.replace("{{{CONAN_INCS_LIBS}}}",lib_incl)
         else:
-            opt_temp = incl + "\n\n " + lib_incl
+            opt_temp = incl + "\n\n " + lib_incl + "\n"
 
         return opt_temp
 
