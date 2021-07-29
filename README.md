@@ -57,8 +57,8 @@ with the cached libraries in conan
 ## Install OpenFOAM generator
 
 ```bash
-    cd foamGen
-    conan export . myuser/foamGen
+    cd OpenFOAMGen
+    conan export . myuser/OpenFOAMGen
 ```
 
 The generator is now installed
